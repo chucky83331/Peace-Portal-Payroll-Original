@@ -12,7 +12,7 @@ namespace Peace_Portal_Payroll.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "16.8.1.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "17.1.0.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -62,17 +62,6 @@ namespace Peace_Portal_Payroll.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.\\SQLEXPRESS;AttachDbFilename=|DataDirectory|\\PPDatabase.mdf;Integrat" +
-            "ed Security=True")]
-        public string CNN {
-            get {
-                return ((string)(this["CNN"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
         [global::System.Configuration.DefaultSettingValueAttribute("Data Source=LIVING-ROOM\\SQLEXPRESS;Initial Catalog=\"E:\\ONEDRIVE\\VISUAL STUDIO PRO" +
             "GRAMS\\VISUAL STUDIO PROJECTS\\PEACE PORTAL PAYROLL BACKUP\\BIN\\DEBUG\\PPDATABASE.MD" +
             "F\";Integrated Security=True")]
@@ -80,6 +69,17 @@ namespace Peace_Portal_Payroll.Properties {
             get {
                 return ((string)(this["E__ONEDRIVE_VISUAL_STUDIO_PROGRAMS_VISUAL_STUDIO_PROJECTS_PEACE_PORTAL_PAYROLL_BA" +
                     "CKUP_BIN_DEBUG_PPDATABASE_MDFConnectionString"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.\\SQLEXPRESS;AttachDbFilename=|DataDirectory|\\PPDatabase.mdf;Integrat" +
+            "ed Security=True")]
+        public string CNN {
+            get {
+                return ((string)(this["CNN"]));
             }
         }
         

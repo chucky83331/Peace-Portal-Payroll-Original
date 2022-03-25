@@ -129,9 +129,10 @@ namespace Peace_Portal_Payroll
             // 
             workDateLabel.AutoSize = true;
             workDateLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            workDateLabel.Location = new System.Drawing.Point(134, 40);
+            workDateLabel.Location = new System.Drawing.Point(89, 26);
+            workDateLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             workDateLabel.Name = "workDateLabel";
-            workDateLabel.Size = new System.Drawing.Size(121, 25);
+            workDateLabel.Size = new System.Drawing.Size(89, 17);
             workDateLabel.TabIndex = 3;
             workDateLabel.Text = "Work Date:";
             // 
@@ -139,9 +140,10 @@ namespace Peace_Portal_Payroll
             // 
             shiftTypeLabel.AutoSize = true;
             shiftTypeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            shiftTypeLabel.Location = new System.Drawing.Point(136, 80);
+            shiftTypeLabel.Location = new System.Drawing.Point(91, 52);
+            shiftTypeLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             shiftTypeLabel.Name = "shiftTypeLabel";
-            shiftTypeLabel.Size = new System.Drawing.Size(118, 25);
+            shiftTypeLabel.Size = new System.Drawing.Size(87, 17);
             shiftTypeLabel.TabIndex = 5;
             shiftTypeLabel.Text = "Shift Type:";
             // 
@@ -149,9 +151,10 @@ namespace Peace_Portal_Payroll
             // 
             shiftTimeLabel.AutoSize = true;
             shiftTimeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            shiftTimeLabel.Location = new System.Drawing.Point(136, 128);
+            shiftTimeLabel.Location = new System.Drawing.Point(91, 83);
+            shiftTimeLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             shiftTimeLabel.Name = "shiftTimeLabel";
-            shiftTimeLabel.Size = new System.Drawing.Size(117, 25);
+            shiftTimeLabel.Size = new System.Drawing.Size(86, 17);
             shiftTimeLabel.TabIndex = 7;
             shiftTimeLabel.Text = "Shift Time:";
             // 
@@ -159,9 +162,10 @@ namespace Peace_Portal_Payroll
             // 
             rateLabel.AutoSize = true;
             rateLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            rateLabel.Location = new System.Drawing.Point(486, 40);
+            rateLabel.Location = new System.Drawing.Point(324, 26);
+            rateLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             rateLabel.Name = "rateLabel";
-            rateLabel.Size = new System.Drawing.Size(63, 25);
+            rateLabel.Size = new System.Drawing.Size(47, 17);
             rateLabel.TabIndex = 9;
             rateLabel.Text = "Rate:";
             // 
@@ -169,18 +173,20 @@ namespace Peace_Portal_Payroll
             // 
             hrsWorkLabel.AutoSize = true;
             hrsWorkLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            hrsWorkLabel.Location = new System.Drawing.Point(302, 112);
+            hrsWorkLabel.Location = new System.Drawing.Point(201, 73);
+            hrsWorkLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             hrsWorkLabel.Name = "hrsWorkLabel";
-            hrsWorkLabel.Size = new System.Drawing.Size(0, 25);
+            hrsWorkLabel.Size = new System.Drawing.Size(0, 17);
             hrsWorkLabel.TabIndex = 11;
             // 
             // diffLabel
             // 
             diffLabel.AutoSize = true;
             diffLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            diffLabel.Location = new System.Drawing.Point(486, 85);
+            diffLabel.Location = new System.Drawing.Point(324, 55);
+            diffLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             diffLabel.Name = "diffLabel";
-            diffLabel.Size = new System.Drawing.Size(122, 25);
+            diffLabel.Size = new System.Drawing.Size(93, 17);
             diffLabel.TabIndex = 13;
             diffLabel.Text = "Differential:";
             // 
@@ -188,9 +194,10 @@ namespace Peace_Portal_Payroll
             // 
             totalLabel.AutoSize = true;
             totalLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            totalLabel.Location = new System.Drawing.Point(782, 129);
+            totalLabel.Location = new System.Drawing.Point(521, 84);
+            totalLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             totalLabel.Name = "totalLabel";
-            totalLabel.Size = new System.Drawing.Size(68, 25);
+            totalLabel.Size = new System.Drawing.Size(50, 17);
             totalLabel.TabIndex = 15;
             totalLabel.Text = "Total:";
             // 
@@ -199,9 +206,10 @@ namespace Peace_Portal_Payroll
             runningTotalLabel.AutoSize = true;
             runningTotalLabel.BackColor = System.Drawing.SystemColors.InactiveCaption;
             runningTotalLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            runningTotalLabel.Location = new System.Drawing.Point(776, 512);
+            runningTotalLabel.Location = new System.Drawing.Point(517, 333);
+            runningTotalLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             runningTotalLabel.Name = "runningTotalLabel";
-            runningTotalLabel.Size = new System.Drawing.Size(159, 25);
+            runningTotalLabel.Size = new System.Drawing.Size(120, 17);
             runningTotalLabel.TabIndex = 17;
             runningTotalLabel.Text = "Running Total :";
             runningTotalLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -210,9 +218,10 @@ namespace Peace_Portal_Payroll
             // 
             LbHrsWork.AutoSize = true;
             LbHrsWork.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            LbHrsWork.Location = new System.Drawing.Point(480, 128);
+            LbHrsWork.Location = new System.Drawing.Point(320, 83);
+            LbHrsWork.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             LbHrsWork.Name = "LbHrsWork";
-            LbHrsWork.Size = new System.Drawing.Size(157, 25);
+            LbHrsWork.Size = new System.Drawing.Size(116, 17);
             LbHrsWork.TabIndex = 12;
             LbHrsWork.Text = "Hours Worked:";
             // 
@@ -240,7 +249,7 @@ namespace Peace_Portal_Payroll
             this.bindingNavigatorMoveLastItem,
             this.bindingNavigatorSeparator2,
             this.BindingNavigatorAddNewItem});
-            this.pPDailyTableBindingNavigator.Location = new System.Drawing.Point(404, 602);
+            this.pPDailyTableBindingNavigator.Location = new System.Drawing.Point(269, 391);
             this.pPDailyTableBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.pPDailyTableBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
             this.pPDailyTableBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
@@ -248,7 +257,7 @@ namespace Peace_Portal_Payroll
             this.pPDailyTableBindingNavigator.Name = "pPDailyTableBindingNavigator";
             this.pPDailyTableBindingNavigator.Padding = new System.Windows.Forms.Padding(0);
             this.pPDailyTableBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.pPDailyTableBindingNavigator.Size = new System.Drawing.Size(664, 92);
+            this.pPDailyTableBindingNavigator.Size = new System.Drawing.Size(443, 60);
             this.pPDailyTableBindingNavigator.TabIndex = 0;
             // 
             // BindingNavigatorAddNewItem
@@ -277,7 +286,7 @@ namespace Peace_Portal_Payroll
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(59, 87);
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(37, 57);
             this.bindingNavigatorCountItem.Text = "of {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
             // 
@@ -298,7 +307,7 @@ namespace Peace_Portal_Payroll
             this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
             this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
             this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(48, 87);
+            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(48, 57);
             this.bindingNavigatorMovePreviousItem.Text = "Move previous";
             this.bindingNavigatorMovePreviousItem.Click += new System.EventHandler(this.BindingNavigatorMovePreviousItem_Click);
             // 
@@ -314,7 +323,7 @@ namespace Peace_Portal_Payroll
             this.bindingNavigatorPositionItem.AutoSize = false;
             this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
-            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 31);
+            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(35, 23);
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "Current position";
             // 
@@ -358,9 +367,10 @@ namespace Peace_Portal_Payroll
             this.workDateDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.pPDailyTableBindingSource, "WorkDate", true));
             this.workDateDateTimePicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.workDateDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.workDateDateTimePicker.Location = new System.Drawing.Point(282, 35);
+            this.workDateDateTimePicker.Location = new System.Drawing.Point(188, 23);
+            this.workDateDateTimePicker.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.workDateDateTimePicker.Name = "workDateDateTimePicker";
-            this.workDateDateTimePicker.Size = new System.Drawing.Size(184, 30);
+            this.workDateDateTimePicker.Size = new System.Drawing.Size(124, 23);
             this.workDateDateTimePicker.TabIndex = 1;
             this.workDateDateTimePicker.Enter += new System.EventHandler(this.BindingNavigatorMoveLastItem_Click);
             // 
@@ -377,9 +387,10 @@ namespace Peace_Portal_Payroll
             "Over Time 2.0",
             "Sick Day",
             "Vacation Pay"});
-            this.CbShiftType.Location = new System.Drawing.Point(282, 77);
+            this.CbShiftType.Location = new System.Drawing.Point(188, 50);
+            this.CbShiftType.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.CbShiftType.Name = "CbShiftType";
-            this.CbShiftType.Size = new System.Drawing.Size(184, 33);
+            this.CbShiftType.Size = new System.Drawing.Size(124, 24);
             this.CbShiftType.TabIndex = 2;
             this.CbShiftType.SelectedIndexChanged += new System.EventHandler(this.ShiftTypeComboBox_SelectedIndexChanged);
             // 
@@ -392,18 +403,20 @@ namespace Peace_Portal_Payroll
             "Morning",
             "Evening",
             "Night"});
-            this.CbShiftTime.Location = new System.Drawing.Point(282, 125);
+            this.CbShiftTime.Location = new System.Drawing.Point(188, 81);
+            this.CbShiftTime.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.CbShiftTime.Name = "CbShiftTime";
-            this.CbShiftTime.Size = new System.Drawing.Size(184, 33);
+            this.CbShiftTime.Size = new System.Drawing.Size(124, 24);
             this.CbShiftTime.TabIndex = 3;
             // 
             // TxbRate
             // 
             this.TxbRate.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pPDailyTableBindingSource, "Rate", true));
             this.TxbRate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxbRate.Location = new System.Drawing.Point(670, 35);
+            this.TxbRate.Location = new System.Drawing.Point(447, 23);
+            this.TxbRate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.TxbRate.Name = "TxbRate";
-            this.TxbRate.Size = new System.Drawing.Size(90, 30);
+            this.TxbRate.Size = new System.Drawing.Size(61, 23);
             this.TxbRate.TabIndex = 4;
             this.TxbRate.TabStop = false;
             this.TxbRate.Text = "0.00";
@@ -413,9 +426,10 @@ namespace Peace_Portal_Payroll
             // 
             this.TxbHour.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pPDailyTableBindingSource, "HrsWork", true));
             this.TxbHour.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxbHour.Location = new System.Drawing.Point(670, 123);
+            this.TxbHour.Location = new System.Drawing.Point(447, 80);
+            this.TxbHour.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.TxbHour.Name = "TxbHour";
-            this.TxbHour.Size = new System.Drawing.Size(90, 30);
+            this.TxbHour.Size = new System.Drawing.Size(61, 23);
             this.TxbHour.TabIndex = 6;
             this.TxbHour.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.TxbHour.Leave += new System.EventHandler(this.TxbHour_TextChanged);
@@ -429,9 +443,10 @@ namespace Peace_Portal_Payroll
             " $0.50",
             " $0.75",
             " $0.00"});
-            this.CbDiff.Location = new System.Drawing.Point(670, 78);
+            this.CbDiff.Location = new System.Drawing.Point(447, 51);
+            this.CbDiff.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.CbDiff.Name = "CbDiff";
-            this.CbDiff.Size = new System.Drawing.Size(90, 33);
+            this.CbDiff.Size = new System.Drawing.Size(61, 24);
             this.CbDiff.TabIndex = 5;
             this.CbDiff.Text = "$0.00";
             // 
@@ -439,9 +454,10 @@ namespace Peace_Portal_Payroll
             // 
             this.TxbTotal.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pPDailyTableBindingSource, "Total", true));
             this.TxbTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxbTotal.Location = new System.Drawing.Point(867, 128);
+            this.TxbTotal.Location = new System.Drawing.Point(578, 83);
+            this.TxbTotal.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.TxbTotal.Name = "TxbTotal";
-            this.TxbTotal.Size = new System.Drawing.Size(138, 30);
+            this.TxbTotal.Size = new System.Drawing.Size(93, 23);
             this.TxbTotal.TabIndex = 7;
             this.TxbTotal.Text = "0.00";
             this.TxbTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -453,9 +469,10 @@ namespace Peace_Portal_Payroll
             this.TxbRunningTotal.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pPDailyTableBindingSource, "RunningTotal", true));
             this.TxbRunningTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxbRunningTotal.ForeColor = System.Drawing.Color.Red;
-            this.TxbRunningTotal.Location = new System.Drawing.Point(976, 509);
+            this.TxbRunningTotal.Location = new System.Drawing.Point(651, 331);
+            this.TxbRunningTotal.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.TxbRunningTotal.Name = "TxbRunningTotal";
-            this.TxbRunningTotal.Size = new System.Drawing.Size(146, 30);
+            this.TxbRunningTotal.Size = new System.Drawing.Size(99, 23);
             this.TxbRunningTotal.TabIndex = 27;
             this.TxbRunningTotal.TabStop = false;
             this.TxbRunningTotal.Text = "0.00";
@@ -506,7 +523,8 @@ namespace Peace_Portal_Payroll
             this.pPDailyTableDataGridView.DefaultCellStyle = dataGridViewCellStyle12;
             this.pPDailyTableDataGridView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.pPDailyTableDataGridView.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pPDailyTableDataGridView.Location = new System.Drawing.Point(12, 195);
+            this.pPDailyTableDataGridView.Location = new System.Drawing.Point(8, 127);
+            this.pPDailyTableDataGridView.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pPDailyTableDataGridView.Name = "pPDailyTableDataGridView";
             dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
@@ -528,7 +546,7 @@ namespace Peace_Portal_Payroll
             this.pPDailyTableDataGridView.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.pPDailyTableDataGridView.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.pPDailyTableDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.pPDailyTableDataGridView.Size = new System.Drawing.Size(1107, 277);
+            this.pPDailyTableDataGridView.Size = new System.Drawing.Size(738, 180);
             this.pPDailyTableDataGridView.TabIndex = 18;
             this.pPDailyTableDataGridView.TabStop = false;
             this.pPDailyTableDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.PPDailyTableDataGridView_CellContentClick);
@@ -656,9 +674,11 @@ namespace Peace_Portal_Payroll
             this.groupBox1.BackColor = System.Drawing.Color.DarkGray;
             this.groupBox1.Controls.Add(hrsWorkLabel);
             this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.groupBox1.Location = new System.Drawing.Point(128, 18);
+            this.groupBox1.Location = new System.Drawing.Point(85, 12);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(910, 157);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Size = new System.Drawing.Size(607, 102);
             this.groupBox1.TabIndex = 19;
             this.groupBox1.TabStop = false;
             // 
@@ -668,10 +688,10 @@ namespace Peace_Portal_Payroll
             this.BtnExit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.BtnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnExit.ForeColor = System.Drawing.Color.Black;
-            this.BtnExit.Location = new System.Drawing.Point(1036, 602);
+            this.BtnExit.Location = new System.Drawing.Point(691, 391);
             this.BtnExit.Margin = new System.Windows.Forms.Padding(0);
             this.BtnExit.Name = "BtnExit";
-            this.BtnExit.Size = new System.Drawing.Size(86, 92);
+            this.BtnExit.Size = new System.Drawing.Size(57, 60);
             this.BtnExit.TabIndex = 0;
             this.BtnExit.TabStop = false;
             this.BtnExit.Text = "Exit";
@@ -682,20 +702,18 @@ namespace Peace_Portal_Payroll
             // 
             this.StartDateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.StartDateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.StartDateTimePicker1.Location = new System.Drawing.Point(111, 68);
-            this.StartDateTimePicker1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.StartDateTimePicker1.Location = new System.Drawing.Point(74, 44);
             this.StartDateTimePicker1.Name = "StartDateTimePicker1";
-            this.StartDateTimePicker1.Size = new System.Drawing.Size(172, 30);
+            this.StartDateTimePicker1.Size = new System.Drawing.Size(116, 22);
             this.StartDateTimePicker1.TabIndex = 20;
             // 
             // EndDateTimePicker2
             // 
             this.EndDateTimePicker2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EndDateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.EndDateTimePicker2.Location = new System.Drawing.Point(111, 108);
-            this.EndDateTimePicker2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.EndDateTimePicker2.Location = new System.Drawing.Point(74, 70);
             this.EndDateTimePicker2.Name = "EndDateTimePicker2";
-            this.EndDateTimePicker2.Size = new System.Drawing.Size(172, 30);
+            this.EndDateTimePicker2.Size = new System.Drawing.Size(116, 22);
             this.EndDateTimePicker2.TabIndex = 21;
             // 
             // label1
@@ -704,10 +722,9 @@ namespace Peace_Portal_Payroll
             this.label1.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(20, 72);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(13, 47);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(74, 25);
+            this.label1.Size = new System.Drawing.Size(50, 16);
             this.label1.TabIndex = 22;
             this.label1.Text = "From :";
             // 
@@ -717,10 +734,9 @@ namespace Peace_Portal_Payroll
             this.label2.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Red;
-            this.label2.Location = new System.Drawing.Point(42, 114);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(28, 74);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(51, 25);
+            this.label2.Size = new System.Drawing.Size(34, 16);
             this.label2.TabIndex = 23;
             this.label2.Text = "To :";
             // 
@@ -729,10 +745,9 @@ namespace Peace_Portal_Payroll
             this.DateRangebtn.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.DateRangebtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DateRangebtn.ForeColor = System.Drawing.Color.Red;
-            this.DateRangebtn.Location = new System.Drawing.Point(22, 152);
-            this.DateRangebtn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.DateRangebtn.Location = new System.Drawing.Point(15, 99);
             this.DateRangebtn.Name = "DateRangebtn";
-            this.DateRangebtn.Size = new System.Drawing.Size(90, 52);
+            this.DateRangebtn.Size = new System.Drawing.Size(60, 34);
             this.DateRangebtn.TabIndex = 24;
             this.DateRangebtn.TabStop = false;
             this.DateRangebtn.Text = "Select";
@@ -750,11 +765,9 @@ namespace Peace_Portal_Payroll
             this.groupBox2.Controls.Add(this.EndDateTimePicker2);
             this.groupBox2.Controls.Add(this.StartDateTimePicker1);
             this.groupBox2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.groupBox2.Location = new System.Drawing.Point(15, 477);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.groupBox2.Location = new System.Drawing.Point(10, 310);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.groupBox2.Size = new System.Drawing.Size(321, 218);
+            this.groupBox2.Size = new System.Drawing.Size(214, 142);
             this.groupBox2.TabIndex = 25;
             this.groupBox2.TabStop = false;
             // 
@@ -764,10 +777,9 @@ namespace Peace_Portal_Payroll
             this.BtnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.BtnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnCancel.ForeColor = System.Drawing.Color.Red;
-            this.BtnCancel.Location = new System.Drawing.Point(177, 152);
-            this.BtnCancel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.BtnCancel.Location = new System.Drawing.Point(118, 99);
             this.BtnCancel.Name = "BtnCancel";
-            this.BtnCancel.Size = new System.Drawing.Size(110, 52);
+            this.BtnCancel.Size = new System.Drawing.Size(73, 34);
             this.BtnCancel.TabIndex = 26;
             this.BtnCancel.TabStop = false;
             this.BtnCancel.Text = "Cancel";
@@ -780,10 +792,9 @@ namespace Peace_Portal_Payroll
             this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(27, 25);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(18, 16);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(241, 25);
+            this.label3.Size = new System.Drawing.Size(167, 16);
             this.label3.TabIndex = 26;
             this.label3.Text = "SELECT DATE RANGE";
             // 
@@ -792,9 +803,10 @@ namespace Peace_Portal_Payroll
             this.TxbDeductions.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.TxbDeductions.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxbDeductions.ForeColor = System.Drawing.Color.Red;
-            this.TxbDeductions.Location = new System.Drawing.Point(976, 471);
+            this.TxbDeductions.Location = new System.Drawing.Point(651, 306);
+            this.TxbDeductions.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.TxbDeductions.Name = "TxbDeductions";
-            this.TxbDeductions.Size = new System.Drawing.Size(146, 30);
+            this.TxbDeductions.Size = new System.Drawing.Size(99, 23);
             this.TxbDeductions.TabIndex = 26;
             this.TxbDeductions.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.TxbDeductions.Visible = false;
@@ -805,9 +817,10 @@ namespace Peace_Portal_Payroll
             this.Deductionlabel.AutoSize = true;
             this.Deductionlabel.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.Deductionlabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Deductionlabel.Location = new System.Drawing.Point(807, 475);
+            this.Deductionlabel.Location = new System.Drawing.Point(538, 309);
+            this.Deductionlabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Deductionlabel.Name = "Deductionlabel";
-            this.Deductionlabel.Size = new System.Drawing.Size(133, 25);
+            this.Deductionlabel.Size = new System.Drawing.Size(99, 17);
             this.Deductionlabel.TabIndex = 28;
             this.Deductionlabel.Text = "Deductions :";
             this.Deductionlabel.Visible = false;
@@ -817,10 +830,9 @@ namespace Peace_Portal_Payroll
             this.TotalHrslabel.AutoSize = true;
             this.TotalHrslabel.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.TotalHrslabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TotalHrslabel.Location = new System.Drawing.Point(434, 477);
-            this.TotalHrslabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.TotalHrslabel.Location = new System.Drawing.Point(289, 310);
             this.TotalHrslabel.Name = "TotalHrslabel";
-            this.TotalHrslabel.Size = new System.Drawing.Size(137, 25);
+            this.TotalHrslabel.Size = new System.Drawing.Size(96, 16);
             this.TotalHrslabel.TabIndex = 29;
             this.TotalHrslabel.Text = "Total Hours :";
             this.TotalHrslabel.Visible = false;
@@ -830,10 +842,9 @@ namespace Peace_Portal_Payroll
             this.Differentiallabel.AutoSize = true;
             this.Differentiallabel.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.Differentiallabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Differentiallabel.Location = new System.Drawing.Point(384, 512);
-            this.Differentiallabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.Differentiallabel.Location = new System.Drawing.Point(256, 333);
             this.Differentiallabel.Name = "Differentiallabel";
-            this.Differentiallabel.Size = new System.Drawing.Size(183, 25);
+            this.Differentiallabel.Size = new System.Drawing.Size(130, 16);
             this.Differentiallabel.TabIndex = 30;
             this.Differentiallabel.Text = "Total Differential :";
             this.Differentiallabel.Visible = false;
@@ -843,10 +854,9 @@ namespace Peace_Portal_Payroll
             this.TxbTotalHrs.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.TxbTotalHrs.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxbTotalHrs.ForeColor = System.Drawing.Color.Red;
-            this.TxbTotalHrs.Location = new System.Drawing.Point(604, 471);
-            this.TxbTotalHrs.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.TxbTotalHrs.Location = new System.Drawing.Point(403, 306);
             this.TxbTotalHrs.Name = "TxbTotalHrs";
-            this.TxbTotalHrs.Size = new System.Drawing.Size(110, 30);
+            this.TxbTotalHrs.Size = new System.Drawing.Size(75, 22);
             this.TxbTotalHrs.TabIndex = 31;
             this.TxbTotalHrs.TabStop = false;
             this.TxbTotalHrs.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -857,10 +867,9 @@ namespace Peace_Portal_Payroll
             this.TxbTotalDiff.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.TxbTotalDiff.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxbTotalDiff.ForeColor = System.Drawing.Color.Red;
-            this.TxbTotalDiff.Location = new System.Drawing.Point(604, 506);
-            this.TxbTotalDiff.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.TxbTotalDiff.Location = new System.Drawing.Point(403, 329);
             this.TxbTotalDiff.Name = "TxbTotalDiff";
-            this.TxbTotalDiff.Size = new System.Drawing.Size(110, 30);
+            this.TxbTotalDiff.Size = new System.Drawing.Size(75, 22);
             this.TxbTotalDiff.TabIndex = 32;
             this.TxbTotalDiff.TabStop = false;
             this.TxbTotalDiff.Text = "0.00";
@@ -872,9 +881,10 @@ namespace Peace_Portal_Payroll
             this.CheckTotalLabel.AutoSize = true;
             this.CheckTotalLabel.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.CheckTotalLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CheckTotalLabel.Location = new System.Drawing.Point(754, 512);
+            this.CheckTotalLabel.Location = new System.Drawing.Point(503, 333);
+            this.CheckTotalLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.CheckTotalLabel.Name = "CheckTotalLabel";
-            this.CheckTotalLabel.Size = new System.Drawing.Size(185, 25);
+            this.CheckTotalLabel.Size = new System.Drawing.Size(136, 17);
             this.CheckTotalLabel.TabIndex = 33;
             this.CheckTotalLabel.Text = "Pay Check Total :";
             this.CheckTotalLabel.Visible = false;
@@ -885,10 +895,9 @@ namespace Peace_Portal_Payroll
             this.Errorlabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.Errorlabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Errorlabel.ForeColor = System.Drawing.Color.Red;
-            this.Errorlabel.Location = new System.Drawing.Point(896, 545);
-            this.Errorlabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.Errorlabel.Location = new System.Drawing.Point(597, 354);
             this.Errorlabel.Name = "Errorlabel";
-            this.Errorlabel.Size = new System.Drawing.Size(230, 55);
+            this.Errorlabel.Size = new System.Drawing.Size(153, 36);
             this.Errorlabel.TabIndex = 34;
             this.Errorlabel.Text = "              <Enter>\r\n  To Subtract Deductions \r\n\r\n";
             this.Errorlabel.Visible = false;
@@ -898,10 +907,9 @@ namespace Peace_Portal_Payroll
             // 
             this.CopyRightlabel.AutoSize = true;
             this.CopyRightlabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CopyRightlabel.Location = new System.Drawing.Point(922, 178);
-            this.CopyRightlabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.CopyRightlabel.Location = new System.Drawing.Point(615, 116);
             this.CopyRightlabel.Name = "CopyRightlabel";
-            this.CopyRightlabel.Size = new System.Drawing.Size(107, 15);
+            this.CopyRightlabel.Size = new System.Drawing.Size(77, 9);
             this.CopyRightlabel.TabIndex = 35;
             this.CopyRightlabel.Text = "(c) C.E.Maybury";
             // 
@@ -921,10 +929,10 @@ namespace Peace_Portal_Payroll
             this.BtnDel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.BtnDel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnDel.ForeColor = System.Drawing.Color.Black;
-            this.BtnDel.Location = new System.Drawing.Point(910, 602);
+            this.BtnDel.Location = new System.Drawing.Point(607, 391);
             this.BtnDel.Margin = new System.Windows.Forms.Padding(0);
             this.BtnDel.Name = "BtnDel";
-            this.BtnDel.Size = new System.Drawing.Size(126, 92);
+            this.BtnDel.Size = new System.Drawing.Size(84, 60);
             this.BtnDel.TabIndex = 36;
             this.BtnDel.TabStop = false;
             this.BtnDel.Text = "Delete";
@@ -933,10 +941,10 @@ namespace Peace_Portal_Payroll
             // 
             // PayrollForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1142, 705);
+            this.ClientSize = new System.Drawing.Size(761, 458);
             this.Controls.Add(this.BtnDel);
             this.Controls.Add(this.CopyRightlabel);
             this.Controls.Add(this.Errorlabel);
@@ -970,6 +978,7 @@ namespace Peace_Portal_Payroll
             this.Controls.Add(this.groupBox2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "PayrollForm";

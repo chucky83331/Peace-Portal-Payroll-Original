@@ -15,6 +15,7 @@ namespace Peace_Portal_Payroll
         static void Main()
         {
             Application.EnableVisualStyles();
+            Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.SetCompatibleTextRenderingDefault(false);
 
             // Run(new PayrollListForm());  for Tim's startup
