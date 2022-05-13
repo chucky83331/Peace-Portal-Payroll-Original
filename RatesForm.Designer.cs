@@ -35,11 +35,11 @@ namespace Peace_Portal_Payroll
             this.LbStartDate = new System.Windows.Forms.Label();
             this.LbEndDate = new System.Windows.Forms.Label();
             this.pPDailyTableBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this._PPDataBase_MDFDataSet = new Peace_Portal_Payroll._PPDataBase_MDFDataSet();
+            //this._PPDataBase_MDFDataSet = new Peace_Portal_Payroll._PPDataBase_MDFDataSet();
             this.pPDailyTableBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.BtExit = new System.Windows.Forms.Button();
-            this.pPDailyTableTableAdapter = new Peace_Portal_Payroll._PPDataBase_MDFDataSetTableAdapters.PPDailyTableTableAdapter();
-            this.tableAdapterManager = new Peace_Portal_Payroll._PPDataBase_MDFDataSetTableAdapters.TableAdapterManager();
+            //this.pPDailyTableTableAdapter = new Peace_Portal_Payroll._PPDataBase_MDFDataSetTableAdapters.PPDailyTableTableAdapter();
+            //this.tableAdapterManager = new Peace_Portal_Payroll._PPDataBase_MDFDataSetTableAdapters.TableAdapterManager();
             this.label1 = new System.Windows.Forms.Label();
             this.Rate1 = new System.Windows.Forms.TextBox();
             this.Rate2 = new System.Windows.Forms.TextBox();
@@ -47,7 +47,7 @@ namespace Peace_Portal_Payroll
             this.panel1 = new System.Windows.Forms.Panel();
             this.Savebtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pPDailyTableBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this._PPDataBase_MDFDataSet)).BeginInit();
+            //((System.ComponentModel.ISupportInitialize)(this._PPDataBase_MDFDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pPDailyTableBindingSource)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -93,12 +93,12 @@ namespace Peace_Portal_Payroll
             // pPDailyTableBindingSource1
             // 
             this.pPDailyTableBindingSource1.DataMember = "PPDailyTable";
-            this.pPDailyTableBindingSource1.DataSource = this._PPDataBase_MDFDataSet;
+            //this.pPDailyTableBindingSource1.DataSource = this._PPDataBase_MDFDataSet;
             // 
             // _PPDataBase_MDFDataSet
             // 
-            this._PPDataBase_MDFDataSet.DataSetName = "_PPDataBase_MDFDataSet";
-            this._PPDataBase_MDFDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            //this._PPDataBase_MDFDataSet.DataSetName = "_PPDataBase_MDFDataSet";
+            //this._PPDataBase_MDFDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // pPDailyTableBindingSource
             // 
@@ -121,13 +121,13 @@ namespace Peace_Portal_Payroll
             // 
             // pPDailyTableTableAdapter
             // 
-            this.pPDailyTableTableAdapter.ClearBeforeFill = true;
+            //this.pPDailyTableTableAdapter.ClearBeforeFill = true;
             // 
             // tableAdapterManager
             // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.PPDailyTableTableAdapter = this.pPDailyTableTableAdapter;
-            this.tableAdapterManager.UpdateOrder = Peace_Portal_Payroll._PPDataBase_MDFDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            //this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            //this.tableAdapterManager.PPDailyTableTableAdapter = this.pPDailyTableTableAdapter;
+            //this.tableAdapterManager.UpdateOrder = Peace_Portal_Payroll._PPDataBase_MDFDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
             // label1
             // 
@@ -225,7 +225,7 @@ namespace Peace_Portal_Payroll
             this.Text = "Rates Form";
             this.Load += new System.EventHandler(this.BalanceForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pPDailyTableBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this._PPDataBase_MDFDataSet)).EndInit();
+            //((System.ComponentModel.ISupportInitialize)(this._PPDataBase_MDFDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pPDailyTableBindingSource)).EndInit();
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -240,10 +240,10 @@ namespace Peace_Portal_Payroll
         private System.Windows.Forms.Label LbEndDate;
         private System.Windows.Forms.BindingSource pPDailyTableBindingSource;
         private System.Windows.Forms.Button BtExit;
-        private _PPDataBase_MDFDataSet _PPDataBase_MDFDataSet;
+        //private _PPDataBase_MDFDataSet _PPDataBase_MDFDataSet;
         private System.Windows.Forms.BindingSource pPDailyTableBindingSource1;
-        private _PPDataBase_MDFDataSetTableAdapters.PPDailyTableTableAdapter pPDailyTableTableAdapter;
-        private _PPDataBase_MDFDataSetTableAdapters.TableAdapterManager tableAdapterManager;
+       //private _PPDataBase_MDFDataSetTableAdapters.PPDailyTableTableAdapter pPDailyTableTableAdapter;
+        //private _PPDataBase_MDFDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox Rate1;
         private System.Windows.Forms.TextBox Rate2;

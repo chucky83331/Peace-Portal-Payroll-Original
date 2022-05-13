@@ -29,10 +29,9 @@ namespace Peace_Portal_Payroll
             Peace_Portal_Payroll.Properties.Settings.Default.Rate2 = Rate2.Text;
             Peace_Portal_Payroll.Properties.Settings.Default.Rate3 = Rate3.Text;
             Peace_Portal_Payroll.Properties.Settings.Default.Save();
-        
+
             string message = $"Your new Rates have been saved." + Environment.NewLine + "Click <OK> to continue.";
             MessageBox.Show(message, "Changes Made.", MessageBoxButtons.OK, MessageBoxIcon.Question);
         }
     }
-} 
-  
+}

@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Peace_Portal_Payroll
@@ -18,9 +15,8 @@ namespace Peace_Portal_Payroll
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.SetCompatibleTextRenderingDefault(false);
 
-            // Run(new PayrollListForm());  for Tim's startup
-            // Run(new PPMainForm());  for original startup
             Application.Run(new PPMainForm());
         }
     }
+
 }
