@@ -144,7 +144,7 @@ namespace Peace_Portal_Payroll
                 for (int i = 0; i < grid.Rows.Count; i++)
                     if (grid.Rows[i].Cells[7].Value != null)
                         TxbTotalHrs.Text = Convert.ToString(double.Parse(TxbTotalHrs.Text) + double.Parse(grid.Rows[i].Cells[7].Value.ToString()));
-
+                // Calculate Total Differential.
                 TxbTotalDiff.Text = "0";
                 for (int i = 0; i < grid.Rows.Count; i++)
                     if (grid.Rows[i].Cells[6].Value != null)
@@ -234,7 +234,7 @@ namespace Peace_Portal_Payroll
             m2.Show();
             this.Hide();
         }
-        // Select records to delete from CheckBox's Ticked.
+        // Select records to DELETE from CheckBox's Ticked.
         // ===============================================
         private void BtnDel_Click(object sender, EventArgs e)
         {
@@ -271,7 +271,7 @@ namespace Peace_Portal_Payroll
             data_show();
             CalculateRunningTotal();
 
-        // Insert new record with Unique Id2 number.
+        // INSERT new record with Unique Id2 number.
         // ========================================
         }
         private void btnInsert2_Click(object sender, EventArgs e)
@@ -321,7 +321,7 @@ namespace Peace_Portal_Payroll
             CalculateRunningTotal();
             Record();
         }
-        // Update for changes to record in Table.
+        // UPDATE for changes to record in Table.
         // =====================================
         private void btnUpdate_Click(object sender, EventArgs e)
         {
@@ -362,7 +362,7 @@ namespace Peace_Portal_Payroll
             data_show();
             CalculateRunningTotal();
         }
-        // Reset TextBoxes after Inserting or Updating records
+        // Clear TextBoxes after Inserting or Updating records
         // ===================================================
         private void ClearTextBoxes()
         {
@@ -375,8 +375,8 @@ namespace Peace_Portal_Payroll
             txbTotal.Text = string.Empty;
             txbId.Text = string.Empty;
         }
-        // Select or Tick a checkbox in DataGridView List.
-        // ==============================================
+        // SELECT Record or TICK a checkbox in DataGridView List.
+        // =====================================================
         private void grid_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             try
@@ -455,7 +455,7 @@ namespace Peace_Portal_Payroll
                                  dr.GetDecimal(6), // HrsWork
                                  dr.GetDecimal(7),// Total
                                  dr.GetDecimal(8));// ID2
-            }0
+            }
             // Sets up display to balance Pay Cheque
             TxbDeductions.Visible = true;
             Deductionlabel.Visible = true;
@@ -468,12 +468,12 @@ namespace Peace_Portal_Payroll
             
             CalculateRunningTotal();
             //FormatCurrency();
-            //removeTicks();
+            removeTicks();
             Sort();
             ClearTextBoxes();
 
         }
-        // Enter Deductions from Cheque to get NET pay.
+        // Enter DEDUCTIONS from Cheque to get NET pay.
         // ===========================================
         private void TxbDeductions_KeyDown(object sender, KeyEventArgs e)
         {
@@ -497,7 +497,7 @@ namespace Peace_Portal_Payroll
                 TxbDeductions.Focus();
             }
         }
-        // Clear Start and End Dates Section.
+        // Clear START and END Dates Section.
         // ==================================
         private void BtnCancel_Click(object sender, EventArgs e)
         {
@@ -515,6 +515,7 @@ namespace Peace_Portal_Payroll
             Differentiallabel.Visible = false;
             CheckTotalLabel.Visible = false;
             CalculateRunningTotal();
+            ClearTextBoxes();
         }
     }
 }

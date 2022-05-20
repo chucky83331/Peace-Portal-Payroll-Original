@@ -324,6 +324,7 @@ namespace Peace_Portal_Payroll
             this.txbTotal.Name = "txbTotal";
             this.txbTotal.Size = new System.Drawing.Size(99, 22);
             this.txbTotal.TabIndex = 6;
+            this.txbTotal.TabStop = false;
             this.txbTotal.Text = "0.00";
             this.txbTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
