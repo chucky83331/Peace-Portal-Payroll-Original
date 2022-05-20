@@ -43,9 +43,9 @@ namespace Peace_Portal_Payroll
             System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -54,7 +54,6 @@ namespace Peace_Portal_Payroll
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PayrollForm));
             this.dateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.cbShiftType = new System.Windows.Forms.ComboBox();
@@ -65,6 +64,7 @@ namespace Peace_Portal_Payroll
             this.txbTotal = new System.Windows.Forms.TextBox();
             this.TxbRunningTotal = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txbId = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.DateRangebtn = new System.Windows.Forms.Button();
             this.BtnCancel = new System.Windows.Forms.Button();
@@ -93,7 +93,7 @@ namespace Peace_Portal_Payroll
             this.Diff = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.HrsWork = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ConvDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ID2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnInsert = new System.Windows.Forms.Button();
             this.btnInsert2 = new System.Windows.Forms.Button();
@@ -152,7 +152,7 @@ namespace Peace_Portal_Payroll
             // 
             rateLabel.AutoSize = true;
             rateLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            rateLabel.Location = new System.Drawing.Point(302, 13);
+            rateLabel.Location = new System.Drawing.Point(311, 15);
             rateLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             rateLabel.Name = "rateLabel";
             rateLabel.Size = new System.Drawing.Size(53, 20);
@@ -174,7 +174,7 @@ namespace Peace_Portal_Payroll
             // 
             diffLabel.AutoSize = true;
             diffLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            diffLabel.Location = new System.Drawing.Point(253, 46);
+            diffLabel.Location = new System.Drawing.Point(262, 48);
             diffLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             diffLabel.Name = "diffLabel";
             diffLabel.Size = new System.Drawing.Size(103, 20);
@@ -186,7 +186,7 @@ namespace Peace_Portal_Payroll
             // 
             totalLabel.AutoSize = true;
             totalLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            totalLabel.Location = new System.Drawing.Point(295, 111);
+            totalLabel.Location = new System.Drawing.Point(313, 111);
             totalLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             totalLabel.Name = "totalLabel";
             totalLabel.Size = new System.Drawing.Size(54, 20);
@@ -197,7 +197,7 @@ namespace Peace_Portal_Payroll
             // runningTotalLabel
             // 
             runningTotalLabel.AutoSize = true;
-            runningTotalLabel.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            runningTotalLabel.BackColor = System.Drawing.Color.DarkGoldenrod;
             runningTotalLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             runningTotalLabel.Location = new System.Drawing.Point(476, 410);
             runningTotalLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -211,7 +211,7 @@ namespace Peace_Portal_Payroll
             // 
             LbHrsWork.AutoSize = true;
             LbHrsWork.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            LbHrsWork.Location = new System.Drawing.Point(291, 77);
+            LbHrsWork.Location = new System.Drawing.Point(300, 79);
             LbHrsWork.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             LbHrsWork.Name = "LbHrsWork";
             LbHrsWork.Size = new System.Drawing.Size(67, 20);
@@ -228,20 +228,23 @@ namespace Peace_Portal_Payroll
             // 
             // dateTimePicker
             // 
+            this.dateTimePicker.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.dateTimePicker.CalendarTitleBackColor = System.Drawing.SystemColors.Window;
             this.dateTimePicker.CustomFormat = "MM/dd/yyyy";
             this.dateTimePicker.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
-            this.dateTimePicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.dateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.dateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePicker.Location = new System.Drawing.Point(106, 13);
             this.dateTimePicker.Margin = new System.Windows.Forms.Padding(2);
             this.dateTimePicker.Name = "dateTimePicker";
-            this.dateTimePicker.Size = new System.Drawing.Size(150, 26);
-            this.dateTimePicker.TabIndex = 1;
+            this.dateTimePicker.Size = new System.Drawing.Size(150, 22);
+            this.dateTimePicker.TabIndex = 2;
+            this.dateTimePicker.UseWaitCursor = true;
+            this.dateTimePicker.Value = new System.DateTime(2022, 5, 13, 20, 44, 0, 0);
             // 
             // cbShiftType
             // 
-            this.cbShiftType.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.cbShiftType.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.cbShiftType.FormattingEnabled = true;
             this.cbShiftType.Items.AddRange(new object[] {
             "Regular Hours",
@@ -254,13 +257,13 @@ namespace Peace_Portal_Payroll
             this.cbShiftType.Location = new System.Drawing.Point(106, 45);
             this.cbShiftType.Margin = new System.Windows.Forms.Padding(2);
             this.cbShiftType.Name = "cbShiftType";
-            this.cbShiftType.Size = new System.Drawing.Size(150, 28);
-            this.cbShiftType.TabIndex = 2;
+            this.cbShiftType.Size = new System.Drawing.Size(150, 24);
+            this.cbShiftType.TabIndex = 3;
             this.cbShiftType.SelectedIndexChanged += new System.EventHandler(this.ShiftTypeComboBox_SelectedIndexChanged);
             // 
             // cbShiftTime
             // 
-            this.cbShiftTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.cbShiftTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.cbShiftTime.FormattingEnabled = true;
             this.cbShiftTime.Items.AddRange(new object[] {
             "Morning",
@@ -269,16 +272,16 @@ namespace Peace_Portal_Payroll
             this.cbShiftTime.Location = new System.Drawing.Point(106, 81);
             this.cbShiftTime.Margin = new System.Windows.Forms.Padding(2);
             this.cbShiftTime.Name = "cbShiftTime";
-            this.cbShiftTime.Size = new System.Drawing.Size(150, 28);
-            this.cbShiftTime.TabIndex = 3;
+            this.cbShiftTime.Size = new System.Drawing.Size(150, 24);
+            this.cbShiftTime.TabIndex = 4;
             // 
             // txbRate
             // 
             this.txbRate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.txbRate.Location = new System.Drawing.Point(383, 10);
+            this.txbRate.Location = new System.Drawing.Point(395, 12);
             this.txbRate.Margin = new System.Windows.Forms.Padding(2);
             this.txbRate.Name = "txbRate";
-            this.txbRate.Size = new System.Drawing.Size(91, 26);
+            this.txbRate.Size = new System.Drawing.Size(74, 26);
             this.txbRate.TabIndex = 4;
             this.txbRate.TabStop = false;
             this.txbRate.Text = "0.00";
@@ -286,11 +289,11 @@ namespace Peace_Portal_Payroll
             // 
             // txbHrsWork
             // 
-            this.txbHrsWork.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.txbHrsWork.Location = new System.Drawing.Point(383, 75);
+            this.txbHrsWork.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.txbHrsWork.Location = new System.Drawing.Point(395, 77);
             this.txbHrsWork.Margin = new System.Windows.Forms.Padding(2);
             this.txbHrsWork.Name = "txbHrsWork";
-            this.txbHrsWork.Size = new System.Drawing.Size(91, 26);
+            this.txbHrsWork.Size = new System.Drawing.Size(74, 22);
             this.txbHrsWork.TabIndex = 6;
             this.txbHrsWork.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txbHrsWork.Leave += new System.EventHandler(this.TxbHour_TextChanged);
@@ -298,29 +301,29 @@ namespace Peace_Portal_Payroll
             // cbDiff
             // 
             this.cbDiff.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.cbDiff.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.cbDiff.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.cbDiff.FormatString = "C2";
             this.cbDiff.FormattingEnabled = true;
             this.cbDiff.Items.AddRange(new object[] {
             "0.50",
             "0.75",
             "0.00"});
-            this.cbDiff.Location = new System.Drawing.Point(400, 41);
+            this.cbDiff.Location = new System.Drawing.Point(395, 43);
             this.cbDiff.Margin = new System.Windows.Forms.Padding(2);
             this.cbDiff.Name = "cbDiff";
-            this.cbDiff.Size = new System.Drawing.Size(72, 28);
+            this.cbDiff.Size = new System.Drawing.Size(72, 24);
             this.cbDiff.TabIndex = 5;
             this.cbDiff.Text = "0.00";
             // 
             // txbTotal
             // 
             this.txbTotal.BackColor = System.Drawing.SystemColors.Window;
-            this.txbTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.txbTotal.Location = new System.Drawing.Point(353, 107);
+            this.txbTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.txbTotal.Location = new System.Drawing.Point(370, 107);
             this.txbTotal.Margin = new System.Windows.Forms.Padding(2);
             this.txbTotal.Name = "txbTotal";
-            this.txbTotal.Size = new System.Drawing.Size(121, 26);
-            this.txbTotal.TabIndex = 7;
+            this.txbTotal.Size = new System.Drawing.Size(99, 22);
+            this.txbTotal.TabIndex = 6;
             this.txbTotal.Text = "0.00";
             this.txbTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -341,6 +344,7 @@ namespace Peace_Portal_Payroll
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.BurlyWood;
+            this.groupBox1.Controls.Add(this.txbId);
             this.groupBox1.Controls.Add(hrsWorkLabel);
             this.groupBox1.Controls.Add(diffLabel);
             this.groupBox1.Controls.Add(this.txbTotal);
@@ -365,6 +369,14 @@ namespace Peace_Portal_Payroll
             this.groupBox1.TabIndex = 19;
             this.groupBox1.TabStop = false;
             // 
+            // txbId
+            // 
+            this.txbId.Location = new System.Drawing.Point(106, 113);
+            this.txbId.Name = "txbId";
+            this.txbId.Size = new System.Drawing.Size(63, 23);
+            this.txbId.TabIndex = 40;
+            this.txbId.Visible = false;
+            // 
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.DarkGray;
@@ -376,11 +388,11 @@ namespace Peace_Portal_Payroll
             this.groupBox2.Controls.Add(this.StartDateTimePicker1);
             this.groupBox2.Controls.Add(this.EndDateTimePicker2);
             this.groupBox2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.groupBox2.Location = new System.Drawing.Point(35, 426);
+            this.groupBox2.Location = new System.Drawing.Point(35, 434);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.groupBox2.Size = new System.Drawing.Size(196, 149);
+            this.groupBox2.Size = new System.Drawing.Size(196, 141);
             this.groupBox2.TabIndex = 25;
             this.groupBox2.TabStop = false;
             // 
@@ -455,23 +467,29 @@ namespace Peace_Portal_Payroll
             // 
             // StartDateTimePicker1
             // 
-            this.StartDateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.StartDateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.StartDateTimePicker1.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.StartDateTimePicker1.CustomFormat = "MM/dd/yyyy";
+            this.StartDateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.StartDateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.StartDateTimePicker1.Location = new System.Drawing.Point(71, 47);
             this.StartDateTimePicker1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.StartDateTimePicker1.Name = "StartDateTimePicker1";
-            this.StartDateTimePicker1.Size = new System.Drawing.Size(115, 26);
+            this.StartDateTimePicker1.Size = new System.Drawing.Size(115, 22);
             this.StartDateTimePicker1.TabIndex = 20;
+            this.StartDateTimePicker1.TabStop = false;
+            this.StartDateTimePicker1.Value = new System.DateTime(2022, 5, 19, 12, 15, 0, 0);
             // 
             // EndDateTimePicker2
             // 
-            this.EndDateTimePicker2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.EndDateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.EndDateTimePicker2.CustomFormat = "MM/dd/yyyy";
+            this.EndDateTimePicker2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.EndDateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.EndDateTimePicker2.Location = new System.Drawing.Point(71, 80);
             this.EndDateTimePicker2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.EndDateTimePicker2.Name = "EndDateTimePicker2";
-            this.EndDateTimePicker2.Size = new System.Drawing.Size(115, 26);
+            this.EndDateTimePicker2.Size = new System.Drawing.Size(115, 22);
             this.EndDateTimePicker2.TabIndex = 21;
+            this.EndDateTimePicker2.TabStop = false;
             // 
             // BtnExit
             // 
@@ -494,7 +512,7 @@ namespace Peace_Portal_Payroll
             this.TxbDeductions.BackColor = System.Drawing.SystemColors.Control;
             this.TxbDeductions.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.TxbDeductions.ForeColor = System.Drawing.Color.Red;
-            this.TxbDeductions.Location = new System.Drawing.Point(603, 579);
+            this.TxbDeductions.Location = new System.Drawing.Point(630, 579);
             this.TxbDeductions.Margin = new System.Windows.Forms.Padding(2);
             this.TxbDeductions.Name = "TxbDeductions";
             this.TxbDeductions.Size = new System.Drawing.Size(91, 23);
@@ -506,9 +524,9 @@ namespace Peace_Portal_Payroll
             // Deductionlabel
             // 
             this.Deductionlabel.AutoSize = true;
-            this.Deductionlabel.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.Deductionlabel.BackColor = System.Drawing.Color.DarkGoldenrod;
             this.Deductionlabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.Deductionlabel.Location = new System.Drawing.Point(503, 579);
+            this.Deductionlabel.Location = new System.Drawing.Point(528, 582);
             this.Deductionlabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Deductionlabel.Name = "Deductionlabel";
             this.Deductionlabel.Size = new System.Drawing.Size(99, 17);
@@ -520,9 +538,9 @@ namespace Peace_Portal_Payroll
             // TotalHrslabel
             // 
             this.TotalHrslabel.AutoSize = true;
-            this.TotalHrslabel.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.TotalHrslabel.BackColor = System.Drawing.Color.DarkGoldenrod;
             this.TotalHrslabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.TotalHrslabel.Location = new System.Drawing.Point(65, 406);
+            this.TotalHrslabel.Location = new System.Drawing.Point(72, 408);
             this.TotalHrslabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.TotalHrslabel.Name = "TotalHrslabel";
             this.TotalHrslabel.Size = new System.Drawing.Size(96, 16);
@@ -534,9 +552,9 @@ namespace Peace_Portal_Payroll
             // Differentiallabel
             // 
             this.Differentiallabel.AutoSize = true;
-            this.Differentiallabel.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.Differentiallabel.BackColor = System.Drawing.Color.DarkGoldenrod;
             this.Differentiallabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.Differentiallabel.Location = new System.Drawing.Point(296, 409);
+            this.Differentiallabel.Location = new System.Drawing.Point(303, 411);
             this.Differentiallabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Differentiallabel.Name = "Differentiallabel";
             this.Differentiallabel.Size = new System.Drawing.Size(78, 16);
@@ -550,7 +568,7 @@ namespace Peace_Portal_Payroll
             this.TxbTotalHrs.BackColor = System.Drawing.SystemColors.Control;
             this.TxbTotalHrs.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.TxbTotalHrs.ForeColor = System.Drawing.Color.Red;
-            this.TxbTotalHrs.Location = new System.Drawing.Point(169, 404);
+            this.TxbTotalHrs.Location = new System.Drawing.Point(176, 406);
             this.TxbTotalHrs.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.TxbTotalHrs.Name = "TxbTotalHrs";
             this.TxbTotalHrs.Size = new System.Drawing.Size(76, 22);
@@ -564,7 +582,7 @@ namespace Peace_Portal_Payroll
             this.TxbTotalDiff.BackColor = System.Drawing.SystemColors.Control;
             this.TxbTotalDiff.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.TxbTotalDiff.ForeColor = System.Drawing.Color.Red;
-            this.TxbTotalDiff.Location = new System.Drawing.Point(382, 405);
+            this.TxbTotalDiff.Location = new System.Drawing.Point(389, 407);
             this.TxbTotalDiff.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.TxbTotalDiff.Name = "TxbTotalDiff";
             this.TxbTotalDiff.Size = new System.Drawing.Size(76, 22);
@@ -576,12 +594,12 @@ namespace Peace_Portal_Payroll
             // 
             // CheckTotalLabel
             // 
-            this.CheckTotalLabel.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.CheckTotalLabel.BackColor = System.Drawing.Color.DarkGoldenrod;
             this.CheckTotalLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.CheckTotalLabel.Location = new System.Drawing.Point(479, 408);
+            this.CheckTotalLabel.Location = new System.Drawing.Point(476, 408);
             this.CheckTotalLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.CheckTotalLabel.Name = "CheckTotalLabel";
-            this.CheckTotalLabel.Size = new System.Drawing.Size(117, 21);
+            this.CheckTotalLabel.Size = new System.Drawing.Size(120, 21);
             this.CheckTotalLabel.TabIndex = 33;
             this.CheckTotalLabel.Text = "Net Total :";
             this.CheckTotalLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -647,34 +665,36 @@ namespace Peace_Portal_Payroll
             this.Diff,
             this.HrsWork,
             this.Total,
-            this.ConvDate});
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.grid.DefaultCellStyle = dataGridViewCellStyle12;
+            this.ID2});
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.grid.DefaultCellStyle = dataGridViewCellStyle11;
             this.grid.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.grid.EnableHeadersVisualStyles = false;
-            this.grid.Location = new System.Drawing.Point(66, 18);
+            this.grid.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.grid.Location = new System.Drawing.Point(72, 16);
+            this.grid.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.grid.MultiSelect = false;
             this.grid.Name = "grid";
             this.grid.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.grid.RowHeadersDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.grid.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
             this.grid.RowHeadersVisible = false;
             this.grid.RowHeadersWidth = 123;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.grid.RowsDefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.grid.RowsDefaultCellStyle = dataGridViewCellStyle13;
             this.grid.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.grid.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.grid.RowTemplate.Height = 25;
@@ -683,10 +703,9 @@ namespace Peace_Portal_Payroll
             this.grid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.grid.ShowCellToolTips = false;
             this.grid.ShowRowErrors = false;
-            this.grid.Size = new System.Drawing.Size(624, 385);
+            this.grid.Size = new System.Drawing.Size(635, 385);
             this.grid.StandardTab = true;
-            this.grid.TabIndex = 37;
-            this.grid.TabStop = false;
+            this.grid.TabIndex = 1;
             this.grid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grid_CellContentClick);
             // 
             // Id
@@ -717,6 +736,8 @@ namespace Peace_Portal_Payroll
             this.WorkDate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle4.Format = "d";
+            dataGridViewCellStyle4.NullValue = null;
             this.WorkDate.DefaultCellStyle = dataGridViewCellStyle4;
             this.WorkDate.DividerWidth = 3;
             this.WorkDate.HeaderText = "Date";
@@ -808,13 +829,12 @@ namespace Peace_Portal_Payroll
             this.Total.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.Total.Width = 90;
             // 
-            // ConvDate
+            // ID2
             // 
-            dataGridViewCellStyle11.Format = "d";
-            dataGridViewCellStyle11.NullValue = null;
-            this.ConvDate.DefaultCellStyle = dataGridViewCellStyle11;
-            this.ConvDate.HeaderText = "CDate";
-            this.ConvDate.Name = "ConvDate";
+            this.ID2.HeaderText = "ID2";
+            this.ID2.Name = "ID2";
+            this.ID2.Visible = false;
+            this.ID2.Width = 30;
             // 
             // btnUpdate
             // 
@@ -870,7 +890,7 @@ namespace Peace_Portal_Payroll
             // 
             // PayrollForm
             // 
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.DarkGoldenrod;
             this.ClientSize = new System.Drawing.Size(757, 665);
@@ -947,6 +967,7 @@ namespace Peace_Portal_Payroll
         private Button btnInsert;
         private DataGridView grid;
         private Button btnInsert2;
+        private TextBox txbId;
         private DataGridViewTextBoxColumn Id;
         private DataGridViewCheckBoxColumn cBox;
         private DataGridViewTextBoxColumn WorkDate;
@@ -956,6 +977,6 @@ namespace Peace_Portal_Payroll
         private DataGridViewTextBoxColumn Diff;
         private DataGridViewTextBoxColumn HrsWork;
         private DataGridViewTextBoxColumn Total;
-        private DataGridViewTextBoxColumn ConvDate;
+        private DataGridViewTextBoxColumn ID2;
     }
 }

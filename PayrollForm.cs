@@ -15,12 +15,16 @@ namespace Peace_Portal_Payroll
         System.Data.SQLite.SQLiteConnection con;
         System.Data.SQLite.SQLiteCommand cmd;
         SQLiteDataReader dr;
+        int record = 0; // Record Unique Identifier. This is hidden Column and Textbox
+        decimal Currency = 0;
 
         public PayrollForm()
         {
             InitializeComponent();
 
         }
+        // This Fills or Refreshes DataGridView Section
+        // ============================================
         public void data_show() // Was private I changed to public???
         {
             var con = new System.Data.SQLite.SQLiteConnection(cs);
@@ -42,8 +46,10 @@ namespace Peace_Portal_Payroll
                                  dr.GetDecimal(4), // Rate
                                  dr.GetDecimal(5), // Diff
                                  dr.GetDecimal(6), // HrsWork
-                                 dr.GetDecimal(7));// Total
+                                 dr.GetDecimal(7),// Total
+                                 dr.GetDecimal(8));// ID2
             }
+            
             // Resize the master DataGridView columns to fit the newly loaded data.
             grid.AutoResizeColumns();
             // Configure the details DataGridView so that its columns automatically
@@ -52,13 +58,14 @@ namespace Peace_Portal_Payroll
             DataGridViewAutoSizeColumnsMode.AllCells;
 
             CalculateRunningTotal();
-            removeticks();
+            removeTicks();
             Sort();
         }
-
-        private void removeticks()
+        // TODO  Checkboxes start off as selected for some reason???
+        // The following removes tick from checkbox's on program startup.
+        // ==============================================================
+        private void removeTicks()
         {
-            // The following removes tick from checkbox on program startup.
             var total = grid.Rows.Cast<DataGridViewRow>().Where(p => Convert.ToString(p.Cells["WorkDate"].Value) != null).Count();
 
             for (int i = grid.RowCount - 1; i >= 0; i--)
@@ -68,17 +75,13 @@ namespace Peace_Portal_Payroll
                 {
                     row.Cells["cBox"].Value = false;
                 }
-                if (total > 0)
-                {
-                    row.Cells["ConvDate"].Value = ("'" + (Convert.ToDateTime(row.Cells["WorkDate"].Value) + "'"));
-                    total = total - 1;
-                    //MessageBox.Show("ConvDate Is :" + row.Cells["ConvDate"].Value);
-                }
             }
         }
-        private void Create_db()
+        // TODO  ******** Not working. **********
+        // This will create database if it does not exist
+        // ==============================================
+        private void Create_db() 
         {
-            // TODO         ******** Not working.
             if (!System.IO.File.Exists(path))
             {
                 SQLiteConnection.CreateFile(path);
@@ -97,14 +100,33 @@ namespace Peace_Portal_Payroll
                 return;
             }
         }
-        decimal Currency = 0;
+        // Program Start
+        // =============
         private void PayrollForm_Load(object sender, EventArgs e)
         {
             Create_db();
             data_show();
             Sort();
             CalculateRunningTotal();
+            Record();
         }
+        // TODO - Try to find way of using Id column as Unique identifier to avoid the following:-
+        // This Method increments Unique Id2 Column Row number for new rows.
+        // This is necessery to Delete selected record only with identical info
+        // ====================================================================
+        private void Record()
+        {
+            record = Convert.ToByte(grid.Rows[0].Cells[9].Value);
+            for (int i = 0; i < grid.Rows.Count; i++)
+                {
+                if (Convert.ToByte(grid.Rows[i].Cells[9].Value) > record)
+                {
+                    record = Convert.ToByte(grid.Rows[i].Cells[9].Value) + 1;
+                }
+            }
+        }
+        // Calculate RunningTotal, Total Hours Total Differentials in Pay Cheque Balancing Section
+        // =======================================================================================
         private void CalculateRunningTotal()
         {
             try
@@ -117,12 +139,12 @@ namespace Peace_Portal_Payroll
                 Currency = Convert.ToDecimal(TxbRunningTotal.Text);
                 TxbRunningTotal.Text = Currency.ToString("C");
 
+                // Total Total Hours and Differential in the Checking Pay Cheque Section.
                 TxbTotalHrs.Text = "0";
                 for (int i = 0; i < grid.Rows.Count; i++)
                     if (grid.Rows[i].Cells[7].Value != null)
                         TxbTotalHrs.Text = Convert.ToString(double.Parse(TxbTotalHrs.Text) + double.Parse(grid.Rows[i].Cells[7].Value.ToString()));
 
-                // Total Differential in the Checking Pay Cheque Section.
                 TxbTotalDiff.Text = "0";
                 for (int i = 0; i < grid.Rows.Count; i++)
                     if (grid.Rows[i].Cells[6].Value != null)
@@ -130,10 +152,12 @@ namespace Peace_Portal_Payroll
             }
             catch (Exception)
             {
-                //Errorlabel.Text = (e.Message);
+                MessageBox.Show("Error! Calculating ");
+                return;
             }
         }
-
+        // TODO Not being used sofar. Not sure if needed???
+        // =================================================
         private void FormatCurrency()  // To add $ to Currency amounts in Text Boxes.
         {
             try
@@ -152,20 +176,20 @@ namespace Peace_Portal_Payroll
             }
             catch (Exception)
             {
+                MessageBox.Show("Error! Cannot format this entry???");
                 return;
             }
         }
+        // Sort on Date column
+        // ===================
         private void Sort()
         {
-            // Goto last record in GridView and Sorts by Date. 
-            if (grid.Rows.Count > 0)
-            {
-                //grid.CurrentCell = grid.Rows[grid.Rows.Count - 1].Cells[1];
-                grid.Sort(grid.Columns[9], System.ComponentModel.ListSortDirection.Ascending);
-            }
+            grid.Sort(grid.Columns[2], System.ComponentModel.ListSortDirection.Ascending);
+            
             SendKeys.Send("{DOWN}");
-            CalculateRunningTotal();
         }
+        // Calculates Daily Total ie. (Rate + Diff) * Hours) = Total.
+        // =========================================================
         private void TxbHour_TextChanged(object sender, EventArgs e)
         {
             // Text Boxes must have Decimal value.
@@ -181,6 +205,8 @@ namespace Peace_Portal_Payroll
             txbTotal.Text = Convert.ToString(DailyTotal);
             Currency = Convert.ToDecimal(txbTotal.Text);
         }
+        // Sets Rate from ShitType Selection.
+        // ==================================
         private void ShiftTypeComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             // Get the Rate for the Shift Type Selected and enter in the Rate Text Box.
@@ -208,7 +234,8 @@ namespace Peace_Portal_Payroll
             m2.Show();
             this.Hide();
         }
-
+        // Select records to delete from CheckBox's Ticked.
+        // ===============================================
         private void BtnDel_Click(object sender, EventArgs e)
         {
             int total = 0;
@@ -222,7 +249,7 @@ namespace Peace_Portal_Payroll
                 drow = grid.Rows[i];
                 if (Convert.ToBoolean(drow.Cells["cBox"].Value) == true)    // Checking if checked or not.
                 {
-                    string id = drow.Cells[4].Value.ToString();
+                    string id = drow.Cells[9].Value.ToString();
                     selectedItem.Add(id); //If checked adding it to the list
                     total++;
                 }
@@ -234,7 +261,7 @@ namespace Peace_Portal_Payroll
             {
                 foreach (string s in selectedItem) //Using foreach loop to delete the records stored in list.  
                 {
-                    System.Data.SQLite.SQLiteCommand cmd = new System.Data.SQLite.SQLiteCommand("DELETE FROM PPDailyTable WHERE ShiftTime='" + s + "'", con);
+                    System.Data.SQLite.SQLiteCommand cmd = new System.Data.SQLite.SQLiteCommand("DELETE FROM PPDailyTable WHERE ID2='" + s + "'", con);
                     int result = cmd.ExecuteNonQuery();
                 }
             }
@@ -244,16 +271,22 @@ namespace Peace_Portal_Payroll
             data_show();
             CalculateRunningTotal();
 
+        // Insert new record with Unique Id2 number.
+        // ========================================
         }
         private void btnInsert2_Click(object sender, EventArgs e)
         {
+            record++;
+            txbId.Text = record.ToString();
+           
             var con = new System.Data.SQLite.SQLiteConnection(cs);
             con.Open();
             var cmd = new System.Data.SQLite.SQLiteCommand(con);
 
             try
             {
-                cmd.CommandText = "INSERT INTO PPDailyTable(WorkDate,ShiftType,ShiftTime,Rate,Diff,HrsWork,Total) VALUES(@WorkDate,@ShiftType,@shiftTime,@Rate,@Diff,@HrsWork,@Total)";
+                cmd.CommandText = "INSERT INTO PPDailyTable(WorkDate,ShiftType,ShiftTime,Rate,Diff,HrsWork,Total,ID2)" +
+                    " VALUES(@WorkDate,@ShiftType,@shiftTime,@Rate,@Diff,@HrsWork,@Total,@ID2)";
 
                 string WORKDATE = dateTimePicker.Text;
                 string SHIFTTYPE = cbShiftType.Text;
@@ -262,6 +295,7 @@ namespace Peace_Portal_Payroll
                 decimal DIFF = Convert.ToDecimal(cbDiff.Text);
                 decimal HRSWORK = Convert.ToDecimal(txbHrsWork.Text);
                 decimal TOTAL = Convert.ToDecimal(txbTotal.Text);
+                decimal ID2 = Convert.ToByte(txbId.Text);
 
                 cmd.Parameters.AddWithValue("@WorkDate", WORKDATE);
                 cmd.Parameters.AddWithValue("@ShiftType", SHIFTTYPE);
@@ -270,25 +304,30 @@ namespace Peace_Portal_Payroll
                 cmd.Parameters.AddWithValue("@Diff", DIFF);
                 cmd.Parameters.AddWithValue("@HrsWork", HRSWORK);
                 cmd.Parameters.AddWithValue("@Total", TOTAL);
+                cmd.Parameters.AddWithValue("@ID2", ID2);
 
-                string[] row = new string[] { WORKDATE, SHIFTTYPE, SHIFTTIME };   //, Convert.ToString(RATE), Convert.ToString(DIFF), Convert.ToString(HRSWORK), Convert.ToString(TOTAL) };
-
+                string[] row = new string[] { WORKDATE, SHIFTTYPE, SHIFTTIME }; // Seems to work with only theses fields???
                 grid.Rows.Add(row);
                 cmd.ExecuteNonQuery();
             }
             catch (Exception)
             {
-                MessageBox.Show("Error! Cannot insert data");
+                MessageBox.Show("Error! Cannot insert record");
                 return;
             }
             grid.Rows.Clear();
             ClearTextBoxes();
             data_show();
             CalculateRunningTotal();
+            Record();
         }
-
+        // Update for changes to record in Table.
+        // =====================================
         private void btnUpdate_Click(object sender, EventArgs e)
         {
+            if (txbRate.Text.Substring(0, 1) == "$") txbRate.Text.Remove(0, 1);
+            if (txbTotal.Text.Substring(0, 1) == "$") txbTotal.Text.Remove(0, 1);
+            if (cbDiff.Text.Substring(0, 1) == "$") cbDiff.Text.Remove(0, 1);
             var con = new System.Data.SQLite.SQLiteConnection(cs);
             con.Open();
 
@@ -297,8 +336,9 @@ namespace Peace_Portal_Payroll
             try
             {
                 cmd.CommandText = "UPDATE PPDailyTable Set WorkDate=@WorkDate,ShiftType=@ShiftType," +
-                    "ShiftTime=@ShiftTime,Rate=@Rate,Diff=@Diff,HrsWork=@HrsWork,Total=@Total " +
-                    "WHERE WorkDate=@WorkDate";
+                    "ShiftTime=@ShiftTime,Rate=@Rate,Diff=@Diff,HrsWork=@HrsWork,Total=@Total,ID2=@ID2 " +
+                    "WHERE ID2=@ID2";
+                //cmd.CommandText = "INSERT INTO PPDailyTable (WorkDate,ShiftType,ShiftTime,Rate,Diff,HrsWork,Total) VALUES (@WorkDate,@ShiftType,@ShiftTime,@Rate,@Diff,@HrsWork,@Total)";
                 cmd.Prepare();
                 cmd.Parameters.AddWithValue("@WorkDate", dateTimePicker.Text);
                 cmd.Parameters.AddWithValue("@ShiftType", cbShiftType.Text);
@@ -307,12 +347,13 @@ namespace Peace_Portal_Payroll
                 cmd.Parameters.AddWithValue("@Diff", cbDiff.Text);
                 cmd.Parameters.AddWithValue("@HrsWork", txbHrsWork.Text);
                 cmd.Parameters.AddWithValue("@Total", txbTotal.Text);
-
+                cmd.Parameters.AddWithValue("@ID2", txbId.Text);
+                
                 cmd.ExecuteNonQuery();
             }
             catch (Exception)
             {
-                MessageBox.Show("Cannot update data");
+                MessageBox.Show("Cannot update data ");
                 return;
             }
             ClearTextBoxes();
@@ -321,6 +362,8 @@ namespace Peace_Portal_Payroll
             data_show();
             CalculateRunningTotal();
         }
+        // Reset TextBoxes after Inserting or Updating records
+        // ===================================================
         private void ClearTextBoxes()
         {
             dateTimePicker.Text = DateTime.Now.ToString();
@@ -330,7 +373,10 @@ namespace Peace_Portal_Payroll
             cbDiff.Text = string.Empty;
             txbHrsWork.Text = string.Empty;
             txbTotal.Text = string.Empty;
+            txbId.Text = string.Empty;
         }
+        // Select or Tick a checkbox in DataGridView List.
+        // ==============================================
         private void grid_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             try
@@ -345,6 +391,7 @@ namespace Peace_Portal_Payroll
                     cbDiff.Text = grid.Rows[e.RowIndex].Cells["Diff"].FormattedValue.ToString();
                     txbHrsWork.Text = grid.Rows[e.RowIndex].Cells["HrsWork"].FormattedValue.ToString();
                     txbTotal.Text = grid.Rows[e.RowIndex].Cells["Total"].FormattedValue.ToString();
+                    txbId.Text = grid.Rows[e.RowIndex].Cells["ID2"].FormattedValue.ToString();
 
                     DataGridViewRow row = grid.Rows[e.RowIndex];
                     if (grid.CurrentCell.GetType() == typeof(DataGridViewCheckBoxCell))
@@ -363,7 +410,7 @@ namespace Peace_Portal_Payroll
             }
             catch
             {
-                //MessageBox.Show("Index out of range");
+                MessageBox.Show("Error! Try again");
                 return;
             }
         }
@@ -373,9 +420,10 @@ namespace Peace_Portal_Payroll
         private void PPDailyTableDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             CalculateRunningTotal();
-            FormatCurrency();
+            //FormatCurrency();
         }
-        // Load selected Dates to Balance Pay Period
+        // Set selected Dates to Balance Pay Period
+        // =========================================
         private void DateRangebtn_Click(object sender, EventArgs e)
         {
             TxbDeductions.Focus();
@@ -388,7 +436,7 @@ namespace Peace_Portal_Payroll
 
             var con = new System.Data.SQLite.SQLiteConnection(cs);
             con.Open();
-            string stm = "SELECT * FROM PPDailyTable WHERE WorkDate Between " + datestart + "AND" + dateend + "ORDER BY WorkDate";
+            string stm = "SELECT * FROM PPDailyTable WHERE WorkDate Between " + datestart + "AND" + dateend;
             var cmd = new System.Data.SQLite.SQLiteCommand(stm, con);
             dr = cmd.ExecuteReader();
 
@@ -405,10 +453,10 @@ namespace Peace_Portal_Payroll
                                  dr.GetDecimal(4), // Rate
                                  dr.GetDecimal(5), // Diff
                                  dr.GetDecimal(6), // HrsWork
-                                 dr.GetDecimal(7));// Total
-            }
-            removeticks();
-
+                                 dr.GetDecimal(7),// Total
+                                 dr.GetDecimal(8));// ID2
+            }0
+            // Sets up display to balance Pay Cheque
             TxbDeductions.Visible = true;
             Deductionlabel.Visible = true;
             TxbTotalHrs.Visible = true;
@@ -417,13 +465,18 @@ namespace Peace_Portal_Payroll
             Differentiallabel.Visible = true;
             Differentiallabel.Visible = true;
             CheckTotalLabel.Visible = true;
+            
             CalculateRunningTotal();
-            FormatCurrency();
+            //FormatCurrency();
+            //removeTicks();
             Sort();
+            ClearTextBoxes();
+
         }
+        // Enter Deductions from Cheque to get NET pay.
+        // ===========================================
         private void TxbDeductions_KeyDown(object sender, KeyEventArgs e)
         {
-            // Balance Pay Cheque.
             if (e.KeyCode == Keys.Enter)
             {
                 TxbRunningTotal.Focus();
@@ -444,7 +497,9 @@ namespace Peace_Portal_Payroll
                 TxbDeductions.Focus();
             }
         }
-        private void BtnCancel_Click(object sender, EventArgs e)  // Clear Date Range Section
+        // Clear Start and End Dates Section.
+        // ==================================
+        private void BtnCancel_Click(object sender, EventArgs e)
         {
             grid.Rows.Clear();
             grid.Refresh();
